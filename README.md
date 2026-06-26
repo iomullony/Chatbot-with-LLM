@@ -7,7 +7,9 @@ A more detailled description of the task and the approach to solve it.
 
 # Run
 
-Use `streamlit run code_01_check_env.py` and `streamlit run code_02_chatbot.py`
+First make sure to have the requirements with `pip install -r requirements.txt`.
+
+Use `streamlit run app.py`
 
 # Used Hardware description
 Descriptions of:
