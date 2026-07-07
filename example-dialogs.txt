@@ -1,0 +1,54 @@
+======================================================================
+DIALOG 1: Incoming Exchange Student - Application Deadlines & Process
+Target: International Office (Incomings & Deadlines)
+======================================================================
+User: Hello! I want to come to DIT as an exchange student for the winter semester. When is the application period?
+Chatbot: For the winter semester (October entries), the application period runs from April 1st to June 1st. The online application portal is only activated during this time.
+User: Can I just go ahead and fill out the application form on your website right now?
+Chatbot: No, you must first be officially nominated by your home university. Once they nominate you, you will receive a link to the online application form.
+User: Do I need to mail my physical documents to Deggendorf after completing the form?
+Chatbot: No, nothing should be sent by post or email. The entire process is done online via a system called Mobility Online, where you will upload documents like your CV, photo, passport, and grade sheet.
+
+======================================================================
+DIALOG 2: Exchange Programmes & Language Requirements
+Target: International Office (Programmes & Requirements)
+======================================================================
+User: Hi, I'm a Computer Science student. Are there any specific English-taught programmes available for exchange students on the Deggendorf campus?
+Chatbot: Yes, DIT offers the International Computer Science programme for business Bachelor students, which is 100% in English and free of charge. Please note it is not available for free movers due to limited capacity.
+User: What are the language proficiency requirements to qualify for this exchange?
+Chatbot: You must have a good to excellent knowledge of the language of instruction (English or German) at a minimum level of B1. 
+User: Do I need to submit an official language certificate like TOEFL or IELTS for admission?
+Chatbot: No, language certificates are not strictly required for your admission to the exchange programme.
+
+======================================================================
+DIALOG 3: Language Centre & TestDaF Fees
+Target: International Office / Language Centre
+======================================================================
+User: Hello! Are exchange students required to learn German while studying at DIT?
+Chatbot: Yes, all exchange students are required to participate in German language courses during their semester. DIT offers free German language courses from levels A1 to C1.
+User: Can I take an official language exam like the TestDaF at the university?
+Chatbot: Yes, DIT is a licensed examination centre for TestDaF. The examination fee for the TestDaF is €210.
+User: Whom should I contact if I want to register for the exam?
+Chatbot: You should contact the Language Centre directly by writing an email to sprachenzentrum@th-deg.de.
+
+======================================================================
+DIALOG 4: Orientation Week & Arrival Support
+Target: International Office (Arrival & Orientation)
+======================================================================
+User: Hi, I am planning my arrival for the upcoming semester. Is the Orientation Week mandatory?
+Chatbot: Yes, Orientation Week is a compulsory event for all exchange students at the main campus in Deggendorf. It takes place one to two weeks before the semester starts, annually in March and September.
+User: What kind of activities are organized during this week?
+Chatbot: Activities include a guided campus and town tour, IT and library introductions, intercultural training, a Bavarian Evening, day trips, and help registering at the residents' registration office.
+User: Who can I email if I have specific questions about incoming exchange logistics?
+Chatbot: You can contact the incoming exchange student team directly at incomings@th-deg.de.
+
+======================================================================
+DIALOG 5: Specific Contact Persons for Programmes
+Target: International Office (Staff & Contacts)
+======================================================================
+User: Hello, I have a detailed question about the General Engineering exchange programme structure. Who is the coordinator for this?
+Chatbot: Nadine Kappl is the coordinator for the General Engineering and International Computer Science programmes. Her office is in room B210.
+User: What is her telephone number if I need to call her?
+Chatbot: You can reach Nadine Kappl by phone at +49 991 3615-242.
+User: Thanks! And who is the contact person if I am instead looking into the General Business programme?
+Chatbot: For the General Business exchange programme, your key contact person at the International Office is Johanna Maurer.
