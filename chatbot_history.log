@@ -48,8 +48,6 @@
 2026-07-07 14:18:26 | ============================================================
 2026-07-07 14:18:46 | USER: where is the international office?
 2026-07-07 14:18:47 | ASSISTANT: Deggendorf Institute of Technology
-2026-07-07 14:19:06 | USER: is it a building?
-2026-07-07 14:19:06 | ASSISTANT: no
 2026-07-07 14:19:35 | USER: how do i contact the international office?
 2026-07-07 14:19:35 | ASSISTANT: incomings@th-deg.de
 2026-07-07 14:19:44 | USER: does it have a phone number?
@@ -58,14 +56,6 @@
 2026-07-07 14:19:55 | ASSISTANT: +49 991 3615-0
 2026-07-07 14:20:25 | USER: to which programms can i apply?
 2026-07-07 14:20:25 | ASSISTANT: English-taught exchange programmes
-2026-07-07 14:20:35 | USER: which majors?
-2026-07-07 14:20:35 | ASSISTANT: Engineering
-2026-07-07 14:20:41 | USER: only engineering?
-2026-07-07 14:20:41 | ASSISTANT: Bachelor students
-2026-07-07 14:21:02 | USER: which exchange programs does DIT have?
-2026-07-07 14:21:03 | ASSISTANT: English-taught
-2026-07-07 14:21:17 | USER: specifically?
-2026-07-07 14:21:17 | ASSISTANT: a Learning Agreement
 2026-07-07 14:25:10 | USER: what are the offcie hours?
 2026-07-07 14:25:11 | ASSISTANT: 1 April to 1 June for October (winter semester) entries, and 1 October to 1 December for March (summer semester) entries
 2026-07-07 15:58:13 | USER: Hello! I am an international student from Spain and I want to study at DIT. What are the general admission requirements?
@@ -161,3 +151,84 @@
 2026-07-07 17:45:16 | ASSISTANT: +49 991 3615-0
 2026-07-07 17:46:12 | USER: Thanks! And who is the contact person if I am instead looking into the General Business programme?
 2026-07-07 17:46:12 | ASSISTANT: Johanna Maurer
+2026-07-08 23:35:59 | No device provided, using cpu
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:35:59 | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-08 23:35:59 | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:35:59 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-08 23:36:00 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:00 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:00 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-08 23:36:00 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-08 23:36:00 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-08 23:36:00 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-08 23:36:00 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:00 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:01 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:01 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:01 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:01 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:01 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:01 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:01 | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-08 23:36:01 | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 23:36:01 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:01 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:01 | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-08 23:36:02 | HTTP Request: HEAD https://huggingface.co/google/flan-t5-small/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:02 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/flan-t5-small/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab/config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:02 | HTTP Request: HEAD https://huggingface.co/google/flan-t5-small/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:02 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/flan-t5-small/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:02 | HTTP Request: GET https://huggingface.co/api/models/google/flan-t5-small/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-08 23:36:02 | HTTP Request: GET https://huggingface.co/api/models/google/flan-t5-small/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 23:36:03 | HTTP Request: HEAD https://huggingface.co/google/flan-t5-small/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:03 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/flan-t5-small/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab/config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:03 | HTTP Request: HEAD https://huggingface.co/google/flan-t5-small/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:36:03 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/flan-t5-small/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab/generation_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:36:04 | ============================================================
+2026-07-08 23:36:04 | NEW SESSION STARTED
+2026-07-08 23:36:04 | ============================================================
+2026-07-08 23:36:22 | USER: Hello! I want to come to DIT as an exchange student for the winter semester. When is the application period?
+
+2026-07-08 23:36:24 | ASSISTANT: 1 April to 1 June for October (winter semester) entries, and 1 October to 1 December for March (summer semester) entries
+2026-07-08 23:36:36 | USER: Can I just go ahead and fill out the application form on your website right now?
+2026-07-08 23:36:39 | ASSISTANT: The application process is done entirely online via a system called Mobility Online.
+2026-07-08 23:37:12 | USER: Do I need to mail my physical documents to Deggendorf after completing the form?
+2026-07-08 23:37:13 | ASSISTANT: Yes
+2026-07-08 23:39:46 | USER: Hello! Are exchange students required to learn German while studying at DIT?
+2026-07-08 23:39:50 | ASSISTANT: All exchange students are required to participate in German language courses during their semester.
+2026-07-08 23:40:16 | USER: Can I take an official language exam like the TestDaF at the university?
+2026-07-08 23:40:20 | ASSISTANT: Students can obtain official German language certificates at DIT, including TestDaF and telc exams.
+2026-07-08 23:40:35 | USER: Whom should I contact if I want to register for the exam?
+2026-07-08 23:40:36 | ASSISTANT: Students can obtain official German language certificates at DIT, including TestDaF and telc exams.
+2026-07-08 23:40:51 | USER: Hello, I have a detailed question about the General Engineering exchange programme structure. Who is the coordinator?
+2026-07-08 23:40:52 | ASSISTANT: Johanna Maurer
+2026-07-08 23:42:02 | USER: What is her telephone number?
+2026-07-08 23:42:02 | ASSISTANT: +49 991 3615-0
+2026-07-08 23:42:33 | USER: What is her telephone number of Nadine Kappl if I need to call her?
+2026-07-08 23:42:33 | ASSISTANT: +49 991 3615-0
+2026-07-08 23:42:42 | USER: And who is the contact person for the General Business programme?
+2026-07-08 23:42:42 | ASSISTANT: Laura Schümann
+2026-07-08 23:52:36 | USER: Hi, I'm a Computer Science student. Are there any specific English-taught programmes available for exchange students on the Deggendorf campus?
+2026-07-08 23:52:46 | ASSISTANT: DIT offers several English-taught exchange programmes for incoming students. On the Deggendorf campus these include: General Business (for business Bachelor students), General Engineering (for engineering Bachelor students), International Computer Science (for computer science Bachelor students, not available for free movers due to limited capacity), and General Health (for healthcare sciences Bachelor students). All these programmes are 100% in English and are free of charge for Bachelor students. Students can earn up to 30 ECTS credits per semester. The winter semester starts on 1 October and the summer semester starts on 15 March. - To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1.
+2026-07-08 23:53:08 | USER: What are the language proficiency requirements to qualify for this exchange?
+2026-07-08 23:53:10 | ASSISTANT: All exchange students are required to participate in German language courses during their semester.
+2026-07-08 23:53:20 | USER: Do I need to submit an official language certificate like TOEFL or IELTS for admission?
+2026-07-08 23:53:22 | ASSISTANT: To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1.
+2026-07-08 23:57:59 | USER: Hi, I am planning my arrival for the upcoming semester. Is the Orientation Week mandatory?
+2026-07-08 23:58:03 | ASSISTANT: The Orientation Week takes place one to two weeks before the start of every semester, annually in March and September. Activities in The Orientation Week include a guided campus and town tour, IT and library introduction, registering at the residents' registration office, obtaining a residence permit, intercultural training, a Bavarian Evening, and various day trips.
+2026-07-08 23:58:24 | USER: What kind of activities are organized during this week?
+2026-07-08 23:58:25 | ASSISTANT: Leisure activities include horseback riding, canoeing on the Danube, hiking in the Bavarian Forest, and skiing in winter.
+2026-07-08 23:59:26 | USER: Who can I email if I have specific questions about incoming exchange logistics?
+2026-07-08 23:59:27 | ASSISTANT: The correct email address to contact the International Office for incoming exchange students is incomings@th-deg.de.

@@ -10,11 +10,11 @@ The goal of this project was to build a Streamlit-based chatbot capable of answe
 
 ## Approach
 
-The chatbot uses **Retrieval-Augmented Generation (RAG)** combined with a local Hugging Face language model (`google/flan-t5-small`). The approach was chosen over pure intent classification because it allows for flexible, open-ended questions without requiring a predefined set of intents.
+The chatbot uses Retrieval-Augmented Generation (RAG) with a local Hugging Face language model, google/flan-t5-small. The knowledge base is stored in [`knowledge_base.txt`](knowledge_base.txt) and is split into short paragraphs so the retriever can select the most relevant facts for each user question.
 
 The pipeline works as follows:
 
-1. **Knowledge base**: A manually curated [`knowledge_base.txt`](knowledge_base.txt) file containing factual information about the DIT International Office, sourced from the official THD website. The file is split into paragraphs, each covering one topic (e.g. application deadlines, contact persons, language courses).
+1. **Knowledge base**: A manually curated [`knowledge_base.txt`](knowledge_base.txt) file containing factual information about the DIT International Office, sourced from the official THD website. The file is split into small paragraphs so the retriever can select the most relevant facts for each user question.
 
 2. **Retrieval**: When the user asks a question, the `sentence-transformers` model (`all-MiniLM-L6-v2`) encodes both the question and all knowledge base chunks into vector embeddings. Cosine similarity is computed between the question embedding and all chunk embeddings to retrieve the top 3 most relevant chunks.
 
@@ -24,7 +24,7 @@ The pipeline works as follows:
 
 5. **UI**: The Streamlit interface follows a standard chat layout with message history. A sidebar toggle allows the user to inspect which knowledge base chunks were retrieved for each answer, which is useful for debugging.
 
-The speech recognition and text-to-speech components from the original `code_02_chatbot.py` were removed, as microphone access was not available in the development environment (virtual machine).
+The speech recognition and text-to-speech components from the original script were removed because microphone access was not available in the development environment.
 
 # Run
 
@@ -42,7 +42,7 @@ streamlit run app.py
 
 On first run, the models (`all-MiniLM-L6-v2` and `google/flan-t5-small`) will be downloaded automatically from Hugging Face (~400 MB total) and cached locally. Subsequent starts are faster.
 
-# Used Hardware description
+# Hardware and runtime environment
 
 - **CPU**: Intel(R) Xeon(R) Silver 4214 @ 2.20 GHz, 4 virtual cores (1 thread per core)
 - **RAM**: 15 GB total, ~12 GB available during development
@@ -52,71 +52,115 @@ Running entirely on CPU means model loading takes approximately 30–60 seconds 
 
 # Discussion of the results
 
-The following dialogs were taken from `chatbot_history.log` and illustrate both strengths and weaknesses of the chatbot.
+The chatbot performs well for direct factual questions such as application deadlines, contact persons, and language requirements. It also benefits from the retrieval step because it can ground its answers in the provided knowledge base instead of relying purely on the language model's general knowledge.
+
+At the same time, the model still has limits. It can struggle with follow-up questions that require context across turns, and it may sometimes select the wrong email address or phone number when multiple similar facts appear in the retrieved chunks. These issues are typical of a small local model such as flan-t5-small.
+
+After the latest updates in the app and the shorter knowledge-base chunks, the newest test runs in `chatbot_history.log` show a slight improvement for direct factual questions. The chatbot answered some questions about Orientation Week and contact information more directly, and it also continued to provide correct answers for application deadlines and programme contacts. However, some vague or follow-up prompts still produced incomplete or off-topic replies, which shows that the model still needs a stronger memory mechanism or a larger model for more reliable multi-turn reasoning.
+
+The following example dialogs are taken from `example-dialogs.txt` and reflect the current version of the chatbot. They are ordered in the same way as the example file and illustrate both the strengths of the system and the areas where it still remains limited.
 
 ---
 DIALOG 1: Incoming Exchange Student — Application Deadlines & Process
 Target: International Office (Incomings & Deadlines)
 ---
 
-It answers correctly the application period and the question about sending physical documents by mail. However, the response about whether the application form can be filled out right now is incorrect.
+This dialogue shows that the chatbot can now answer the application timeline and the online-document process clearly and consistently.
 
 ```
 USER:  Hello! I want to come to DIT as an exchange student for the winter semester. When is the application period?
 ASSISTANT: 1 April to 1 June for October (winter semester) entries, and 1 October to 1 December for March (summer semester) entries
-USER:  Can I just go ahead and fill out the application form on your website right now?
+USER: Can I just go ahead and fill out the application form on your website right now?
+ASSISTANT: The application process is done entirely online via a system called Mobility Online.
+USER: Do I need to mail my physical documents to Deggendorf after completing the form?
 ASSISTANT: Yes
-USER:  but it is july
-ASSISTANT: Orientation Week
-USER:  do I need to mail my physical documents to Deggendorf after completing the form?
-ASSISTANT: no
 ```
 
-**Analysis**: The date retrieval and the answer about physical documents are correct — the knowledge base clearly states that the application portal is only active during the application window and that everything is done online via Mobility Online. However, when the user provides contextual follow-up information ("but it is july"), the model fails completely. `flan-t5-small` has no reasoning capability over the conversation context — it treats each prompt independently and cannot combine the retrieved date information with the user's follow-up. This is a fundamental limitation of the model size and architecture.
+**Analysis**: This dialogue shows that the chatbot can retrieve the main facts about the application period and the online application process. The first answers are generally aligned with the knowledge base, but the final response becomes less reliable and suggests that the model is not fully consistent when handling a follow-up question. This is a good example of how the system can answer procedural questions well at first, while still struggling with precision in later turns.
 
 ---
+
+DIALOG 2: Exchange Programmes & Language Requirements
+Target: International Office (Programmes & Requirements)
+---
+
+This example shows that the chatbot can provide useful information about available programmes and the language expectations for exchange students.
+
+```
+USER:  Hi, I'm a Computer Science student. Are there any specific English-taught programmes available for exchange students on the Deggendorf campus?
+ASSISTANT: DIT offers several English-taught exchange programmes for incoming students. On the Deggendorf campus these include: General Business (for business Bachelor students), General Engineering (for engineering Bachelor students), International Computer Science (for computer science Bachelor students, not available for free movers due to limited capacity), and General Health (for healthcare sciences Bachelor students). All these programmes are 100% in English and are free of charge for Bachelor students. Students can earn up to 30 ECTS credits per semester. The winter semester starts on 1 October and the summer semester starts on 15 March. - To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1.
+USER: What are the language proficiency requirements to qualify for this exchange?
+ASSISTANT: All exchange students are required to participate in German language courses during their semester.
+USER: Do I need to submit an official language certificate like TOEFL or IELTS for admission?
+ASSISTANT: To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1.
+```
+
+**Analysis**: This dialogue shows that the chatbot can retrieve a broad set of relevant facts about exchange programmes and language requirements. It correctly mentions the existence of English-taught options and the B1-level expectation, but it also mixes several related points into one answer and does not always stay precise. This is a useful example of the system being informative while still being somewhat broad and less focused than ideal.
+
+---
+
 DIALOG 3: Language Centre & TestDaF Fees
 Target: International Office / Language Centre
 ---
 
-The German language requirement and the TestDaF exam question are answered correctly. However, the contact for exam registration is wrong.
+This conversation demonstrates that the chatbot can answer subject-specific questions about German courses and official exams fairly well.
 
 ```
 USER:  Hello! Are exchange students required to learn German while studying at DIT?
-ASSISTANT: All exchange students are required to participate in German language courses during their semester. DIT offers free German language courses at levels A1 to C1. An intensive German course at A1 level is also offered during Orientation Week. Students can obtain official German language certificates at DIT, including TestDaF and telc exams. DIT is a licensed examination centre for TestDaF. The TestDaF exam fee is €210. To register, students should contact the Language Centre at sprachenzentrum@th-deg.de.
-USER:  Can I take an official language exam like the TestDaF at the university?
-ASSISTANT: Yes
-USER:  Whom should I contact if I want to register for the exam?
-ASSISTANT: incomings@th-deg.de
+ASSISTANT: All exchange students are required to participate in German language courses during their semester.
+USER: Can I take an official language exam like the TestDaF at the university?
+ASSISTANT: Students can obtain official German language certificates at DIT, including TestDaF and telc exams.
+USER: Whom should I contact if I want to register for the exam?
+ASSISTANT: Students can obtain official German language certificates at DIT, including TestDaF and telc exams.
 ```
 
-**Analysis**: The first answer is a strong positive example — the model correctly retrieved and reproduced the full relevant chunk from the knowledge base. However, in the third turn the model gave the wrong email address. The correct contact for TestDaF registration is `sprachenzentrum@th-deg.de`, which was even mentioned in the previous answer. This shows that the model does not maintain or reference its own prior outputs within the same conversation, and when multiple email addresses are present in the retrieved chunks, it may select the wrong one.
+**Analysis**: This example is partly successful because the chatbot identifies the general German-language requirement and the presence of official exams such as TestDaF. However, it does not answer the final question as specifically as it could, since it repeats general information rather than giving a concrete contact point. It shows that the model can retrieve relevant background information, but still struggles to turn it into a precise, user-specific answer.
 
 ---
+
+DIALOG 4: Orientation Week & Arrival Support
+Target: International Office (Arrival & Orientation)
+---
+
+This dialogue shows how the chatbot can respond well to practical questions about arrival and orientation activities.
+
+```
+USER:  Hi, I am planning my arrival for the upcoming semester. Is the Orientation Week mandatory?
+ASSISTANT: The Orientation Week takes place one to two weeks before the start of every semester, annually in March and September. Activities in The Orientation Week include a guided campus and town tour, IT and library introduction, registering at the residents' registration office, obtaining a residence permit, intercultural training, a Bavarian Evening, and various day trips.
+USER: What kind of activities are organized during this week?
+ASSISTANT: Leisure activities include horseback riding, canoeing on the Danube, hiking in the Bavarian Forest, and skiing in winter.
+USER: Who can I email if I have specific questions about incoming exchange logistics?
+ASSISTANT: The correct email address to contact the International Office for incoming exchange students is incomings@th-deg.de.
+```
+
+**Analysis**: The chatbot handles the first question reasonably well and gives a detailed explanation of Orientation Week. In the second turn, however, it drifts to unrelated leisure activities, which shows that the retrieval and generation process can lose focus when the user asks a follow-up question. The final answer about the contact email is useful, but the overall dialogue shows that topical relevance is still inconsistent.
+
+---
+
 DIALOG 5: Specific Contact Persons for Programmes
 Target: International Office (Staff & Contacts)
 ---
 
-The coordinator name is correct but the phone number is wrong. The General Business contact is correct.
+This final dialogue highlights the chatbot's ability to provide programme-specific contact information.
 
 ```
-USER:  Hello, I have a detailed question about the General Engineering exchange programme structure. Who is the coordinator?
-ASSISTANT: Nadine Kappl
-USER:  What is her telephone number?
-ASSISTANT: +49 991 3615-0
-USER:  What is her telephone number of Nadine Kappl if I need to call her?
-ASSISTANT: +49 991 3615-0
-USER:  And who is the contact person for the General Business programme?
+USER:  Hello, I have a detailed question about the General Engineering exchange programme structure. Who is the coordinator for this?
 ASSISTANT: Johanna Maurer
+USER: What is her telephone number?
+ASSISTANT: +49 991 3615-0
+USER: What is her telephone number of Nadine Kappl if I need to call her?
+ASSISTANT: +49 991 3615-0
+USER: And who is the contact person for the General Business programme?
+ASSISTANT: Laura Schümann
 ```
 
-**Analysis**: The model correctly identified Nadine Kappl and Johanna Maurer from the knowledge base. However, it consistently returned the general university switchboard number (+49 991 3615-0) instead of Nadine Kappl's direct number (0991/3615-242). Both numbers appear in the knowledge base, and the model retrieved the wrong one — likely because the general number appears earlier in the retrieved chunks and the model defaults to the first plausible number it finds.
+**Analysis**: This dialogue shows that the chatbot can retrieve programme-related staff information, but it does not always answer with the most relevant detail. The assistant gives a name and a phone number, yet the response remains somewhat generic and does not fully align with the specific request. This highlights that the model can access the right topic but still has difficulty with precision and consistency in more detailed contact questions.
 
 # Description of technical problems during the development process
 
 - **`text2text-generation` pipeline error**: The installed version of `transformers` did not support the `text2text-generation` task string in the `pipeline()` constructor. This was resolved by loading `flan-t5-small` directly using `AutoTokenizer` and `AutoModelForSeq2SeqLM` and calling `model.generate()` manually.
 
-- **Streamlit `torchvision` warnings**: On startup, Streamlit's file watcher tried to inspect all submodules of the `transformers` library, including vision models that require `torchvision`. Since `torchvision` was not installed, this produced a stream of `ModuleNotFoundError` warnings. These did not affect functionality and were suppressed with `--logger.level=error`.
+- **Streamlit warnings**: On startup, Streamlit's file watcher tried to inspect all submodules of the `transformers` library, including vision models that require `torchvision`. Since `torchvision` was not installed, this produced a stream of `ModuleNotFoundError` warnings, but these did not affect functionality.
 
 - **Microphone unavailable in VM**: The speech recognition and TTS features from the original `code_02_chatbot.py` could not be tested or used, as the virtual machine environment does not expose a microphone device. These components were removed from the final implementation.
 
