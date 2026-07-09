@@ -232,3 +232,85 @@
 2026-07-08 23:58:25 | ASSISTANT: Leisure activities include horseback riding, canoeing on the Danube, hiking in the Bavarian Forest, and skiing in winter.
 2026-07-08 23:59:26 | USER: Who can I email if I have specific questions about incoming exchange logistics?
 2026-07-08 23:59:27 | ASSISTANT: The correct email address to contact the International Office for incoming exchange students is incomings@th-deg.de.
+2026-07-09 15:11:22 | No device provided, using cpu
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:22 | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:22 | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:22 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:23 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:23 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:23 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 15:11:23 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:23 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:23 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 15:11:23 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 15:11:23 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:24 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:24 | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 15:11:24 | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 15:11:25 | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:25 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:25 | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 15:11:25 | HTTP Request: HEAD https://huggingface.co/google/flan-t5-small/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:25 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/flan-t5-small/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab/config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:25 | HTTP Request: HEAD https://huggingface.co/google/flan-t5-small/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:25 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/flan-t5-small/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:25 | HTTP Request: GET https://huggingface.co/api/models/google/flan-t5-small/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 15:11:25 | HTTP Request: GET https://huggingface.co/api/models/google/flan-t5-small/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 15:11:26 | HTTP Request: HEAD https://huggingface.co/google/flan-t5-small/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:26 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/flan-t5-small/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab/config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:26 | HTTP Request: HEAD https://huggingface.co/google/flan-t5-small/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 15:11:26 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/flan-t5-small/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab/generation_config.json "HTTP/1.1 200 OK"
+2026-07-09 15:11:27 | ============================================================
+2026-07-09 15:11:27 | NEW SESSION STARTED
+2026-07-09 15:11:27 | ============================================================
+2026-07-09 15:16:06 | USER: Hello! I want to come to DIT as an exchange student for the winter semester. When is the application period?
+2026-07-09 15:16:07 | ASSISTANT: 1 April to 1 June for October (winter semester) entries, and 1 October to 1 December for March (summer semester) entries
+2026-07-09 15:16:15 | USER: Can I just go ahead and fill out the application form on your website right now?
+2026-07-09 15:16:15 | ASSISTANT: The application process is done entirely online via a system called Mobility Online.
+2026-07-09 15:16:30 | USER: Do I need to mail my physical documents to Deggendorf after completing the form?
+2026-07-09 15:16:31 | ASSISTANT: No
+2026-07-09 15:24:52 | USER: Hi, I'm a Computer Science student. Are there any specific English-taught programmes available for exchange students on the Deggendorf campus?
+2026-07-09 15:24:53 | ASSISTANT: yes
+2026-07-09 15:25:02 | USER: What are the language proficiency requirements to qualify for this exchange?
+2026-07-09 15:25:02 | ASSISTANT: English or German
+2026-07-09 15:25:17 | USER: Do I need to submit an official language certificate like TOEFL or IELTS for admission?
+2026-07-09 15:25:18 | ASSISTANT: To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1
+2026-07-09 15:27:43 | USER: Hello! Are exchange students required to learn German while studying at DIT?
+2026-07-09 15:27:44 | ASSISTANT: To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1.
+2026-07-09 15:27:58 | USER: Can I take an official language exam like the TestDaF at the university?
+2026-07-09 15:27:58 | ASSISTANT: Not required
+2026-07-09 15:28:05 | USER: Whom should I contact if I want to register for the exam?
+2026-07-09 15:28:06 | ASSISTANT: Students can obtain official German language certificates at DIT, including TestDaF and telc exams.
+2026-07-09 15:29:21 | USER: Can I take an official language exam like the TestDaF at the university?
+2026-07-09 15:29:21 | ASSISTANT: Not required
+2026-07-09 15:29:30 | USER: Hi, I am planning my arrival for the upcoming semester. Is the Orientation Week mandatory?
+2026-07-09 15:29:31 | ASSISTANT: Orientation Week is a compulsory event for all exchange students at the main campus in Deggendorf.
+2026-07-09 15:29:48 | USER: What kind of activities are organized during this week?
+2026-07-09 15:29:49 | ASSISTANT: Leisure activities around include horseback riding, canoeing on the Danube, hiking in the Bavarian Forest, and skiing in winter
+2026-07-09 15:30:00 | USER: Who can I email if I have specific questions about incoming exchange logistics?
+2026-07-09 15:30:01 | ASSISTANT: the International Office
+2026-07-09 15:30:23 | USER: Hello, I have a detailed question about the General Engineering exchange programme structure. Who is the coordinator for this?
+2026-07-09 15:30:24 | ASSISTANT: incomings@th-deg.de
+2026-07-09 15:30:52 | USER: What is her telephone number?
+2026-07-09 15:30:52 | ASSISTANT: +49 991 3615-0
+2026-07-09 15:31:23 | USER: What is her telephone number of Nadine Kappl if I need to call her?
+2026-07-09 15:31:23 | ASSISTANT: +49 991 3615-0
+2026-07-09 15:31:32 | USER: And who is the contact person for the General Business programme?
+2026-07-09 15:31:33 | ASSISTANT: Laura Schümann

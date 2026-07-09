@@ -1,6 +1,6 @@
 Sánchez-O'Mullony Martínez, María Isabel, 123456
 
-THD/DIT International Office Chatbot — RAG-based Q&A assistant using flan-t5-small
+This project implements a local Retrieval-Augmented Generation chatbot for the THD/DIT International Office using Streamlit, sentence-transformers, and flan-t5-small.
 
 # Chatbot long description
 
@@ -56,8 +56,6 @@ The chatbot performs well for direct factual questions such as application deadl
 
 At the same time, the model still has limits. It can struggle with follow-up questions that require context across turns, and it may sometimes select the wrong email address or phone number when multiple similar facts appear in the retrieved chunks. These issues are typical of a small local model such as flan-t5-small.
 
-After the latest updates in the app and the shorter knowledge-base chunks, the newest test runs in `chatbot_history.log` show a slight improvement for direct factual questions. The chatbot answered some questions about Orientation Week and contact information more directly, and it also continued to provide correct answers for application deadlines and programme contacts. However, some vague or follow-up prompts still produced incomplete or off-topic replies, which shows that the model still needs a stronger memory mechanism or a larger model for more reliable multi-turn reasoning.
-
 The following example dialogs are taken from `example-dialogs.txt` and reflect the current version of the chatbot. They are ordered in the same way as the example file and illustrate both the strengths of the system and the areas where it still remains limited.
 
 ---
@@ -73,10 +71,10 @@ ASSISTANT: 1 April to 1 June for October (winter semester) entries, and 1 Octobe
 USER: Can I just go ahead and fill out the application form on your website right now?
 ASSISTANT: The application process is done entirely online via a system called Mobility Online.
 USER: Do I need to mail my physical documents to Deggendorf after completing the form?
-ASSISTANT: Yes
+ASSISTANT: No
 ```
 
-**Analysis**: This dialogue shows that the chatbot can retrieve the main facts about the application period and the online application process. The first answers are generally aligned with the knowledge base, but the final response becomes less reliable and suggests that the model is not fully consistent when handling a follow-up question. This is a good example of how the system can answer procedural questions well at first, while still struggling with precision in later turns.
+**Analysis**: This is a fairly strong example because the chatbot correctly answers the key question about the application period and clearly explains that the application process is handled online. The final answer is also relevant, and the dialogue shows that the system can provide useful procedural information when the user asks direct questions about the application workflow.
 
 ---
 
@@ -88,14 +86,14 @@ This example shows that the chatbot can provide useful information about availab
 
 ```
 USER:  Hi, I'm a Computer Science student. Are there any specific English-taught programmes available for exchange students on the Deggendorf campus?
-ASSISTANT: DIT offers several English-taught exchange programmes for incoming students. On the Deggendorf campus these include: General Business (for business Bachelor students), General Engineering (for engineering Bachelor students), International Computer Science (for computer science Bachelor students, not available for free movers due to limited capacity), and General Health (for healthcare sciences Bachelor students). All these programmes are 100% in English and are free of charge for Bachelor students. Students can earn up to 30 ECTS credits per semester. The winter semester starts on 1 October and the summer semester starts on 15 March. - To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1.
+ASSISTANT: yes
 USER: What are the language proficiency requirements to qualify for this exchange?
-ASSISTANT: All exchange students are required to participate in German language courses during their semester.
+ASSISTANT: English or German
 USER: Do I need to submit an official language certificate like TOEFL or IELTS for admission?
 ASSISTANT: To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1.
 ```
 
-**Analysis**: This dialogue shows that the chatbot can retrieve a broad set of relevant facts about exchange programmes and language requirements. It correctly mentions the existence of English-taught options and the B1-level expectation, but it also mixes several related points into one answer and does not always stay precise. This is a useful example of the system being informative while still being somewhat broad and less focused than ideal.
+**Analysis**: This dialogue shows that the chatbot can identify the topic of exchange programmes and language requirements, but the answers are not always precise. The first response is broad and informative, while the second and third turns show that the model sometimes mixes related ideas together instead of answering the specific user question directly. This is a good example of the system being generally helpful but still somewhat imprecise.
 
 ---
 
@@ -107,14 +105,14 @@ This conversation demonstrates that the chatbot can answer subject-specific ques
 
 ```
 USER:  Hello! Are exchange students required to learn German while studying at DIT?
-ASSISTANT: All exchange students are required to participate in German language courses during their semester.
+ASSISTANT: To qualify for an exchange programme at DIT, students must have completed at least two semesters at their home university and have a good to excellent knowledge of the language of instruction (English or German), at least level B1.
 USER: Can I take an official language exam like the TestDaF at the university?
-ASSISTANT: Students can obtain official German language certificates at DIT, including TestDaF and telc exams.
+ASSISTANT: Not required
 USER: Whom should I contact if I want to register for the exam?
 ASSISTANT: Students can obtain official German language certificates at DIT, including TestDaF and telc exams.
 ```
 
-**Analysis**: This example is partly successful because the chatbot identifies the general German-language requirement and the presence of official exams such as TestDaF. However, it does not answer the final question as specifically as it could, since it repeats general information rather than giving a concrete contact point. It shows that the model can retrieve relevant background information, but still struggles to turn it into a precise, user-specific answer.
+**Analysis**: This example is weaker than the earlier ones because the chatbot does not fully answer the user's intent. The first answer drifts away from the original question about German-language requirements, the second answer is not directly related to the TestDaF question, and the third response does not provide a concrete contact point. It shows that the model can retrieve related background information, but it still struggles to stay focused on the specific task.
 
 ---
 
@@ -126,14 +124,14 @@ This dialogue shows how the chatbot can respond well to practical questions abou
 
 ```
 USER:  Hi, I am planning my arrival for the upcoming semester. Is the Orientation Week mandatory?
-ASSISTANT: The Orientation Week takes place one to two weeks before the start of every semester, annually in March and September. Activities in The Orientation Week include a guided campus and town tour, IT and library introduction, registering at the residents' registration office, obtaining a residence permit, intercultural training, a Bavarian Evening, and various day trips.
+ASSISTANT: Orientation Week is a compulsory event for all exchange students at the main campus in Deggendorf.
 USER: What kind of activities are organized during this week?
-ASSISTANT: Leisure activities include horseback riding, canoeing on the Danube, hiking in the Bavarian Forest, and skiing in winter.
+ASSISTANT: Leisure activities include horseback riding, canoeing on the Danube, hiking in the Bavarian Forest, and skiing in winter
 USER: Who can I email if I have specific questions about incoming exchange logistics?
-ASSISTANT: The correct email address to contact the International Office for incoming exchange students is incomings@th-deg.de.
+ASSISTANT: the International Office.
 ```
 
-**Analysis**: The chatbot handles the first question reasonably well and gives a detailed explanation of Orientation Week. In the second turn, however, it drifts to unrelated leisure activities, which shows that the retrieval and generation process can lose focus when the user asks a follow-up question. The final answer about the contact email is useful, but the overall dialogue shows that topical relevance is still inconsistent.
+**Analysis**: This dialogue illustrates a clear weakness of the system. The first answer about Orientation Week is relevant, but the second answer drifts to unrelated leisure activities instead of describing the actual programme activities. The final answer is also too vague and does not provide a concrete contact detail. This shows that the chatbot can identify the topic, but it does not always stay focused on the user’s real intent.
 
 ---
 
@@ -145,7 +143,7 @@ This final dialogue highlights the chatbot's ability to provide programme-specif
 
 ```
 USER:  Hello, I have a detailed question about the General Engineering exchange programme structure. Who is the coordinator for this?
-ASSISTANT: Johanna Maurer
+ASSISTANT: incomings@th-deg.de
 USER: What is her telephone number?
 ASSISTANT: +49 991 3615-0
 USER: What is her telephone number of Nadine Kappl if I need to call her?
@@ -154,7 +152,7 @@ USER: And who is the contact person for the General Business programme?
 ASSISTANT: Laura Schümann
 ```
 
-**Analysis**: This dialogue shows that the chatbot can retrieve programme-related staff information, but it does not always answer with the most relevant detail. The assistant gives a name and a phone number, yet the response remains somewhat generic and does not fully align with the specific request. This highlights that the model can access the right topic but still has difficulty with precision and consistency in more detailed contact questions.
+**Analysis**: This is one of the weaker dialogues because the chatbot does not answer the first question correctly and instead returns an email address that is unrelated to the requested coordinator. The later answers also remain too generic and do not provide the specific contact information the user is looking for. This shows that the model still has difficulty with exact staff and contact details, especially when several similar facts are present in the knowledge base.
 
 # Description of technical problems during the development process
 
